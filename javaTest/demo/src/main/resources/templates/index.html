@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Java + Web Component</title>
+    <script type="text/javascript" src="/web-components.js"></script>
+</head>
+
+<body>
+    <script th:inline="javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const chartData = /*[[${data != null ? data : {}}]]*/ {};
+            const chartElement = document.createElement('web-bar-chart');
+            chartElement.setAttribute('data', JSON.stringify(chartData));
+            document.body.appendChild(chartElement);
+        });
+    </script>
+</body>
+
+</html>
